@@ -49,8 +49,7 @@ namespace YTDownloader
                 var youTube = YouTube.Default; // starting point for YouTube actions
                 var video = youTube.GetVideo(link); // gets a Video object with info about the video
                 File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
-                MessageBox.Show("Downloaded!");
-            }
+                MessageBox.Show("Downloaded!");            }
 
         }
     }
