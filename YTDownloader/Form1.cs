@@ -26,6 +26,7 @@ namespace YTDownloader
                     path = folderDialog.SelectedPath;
                     label2.Text = path;
                 }
+                else MessageBox.Show("Path selection failed!");
             }
         }
 
@@ -39,11 +40,22 @@ namespace YTDownloader
             }
             else
             {
-                var youTube = YouTube.Default;
-                var video = youTube.GetVideo(link); 
-                File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
-                MessageBox.Show("Downloaded!");            }
+                if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+                {
+                    var youTube = YouTube.Default;
+                    var video = youTube.GetVideo(link);
+                    File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
+                    MessageBox.Show("Downloaded!");
+                }
+                else MessageBox.Show("Please connect to a network");
+            }
 
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming Soon...");
         }
     }
 }
