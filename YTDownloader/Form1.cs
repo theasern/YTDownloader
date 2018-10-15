@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VideoLibrary;
 
@@ -46,8 +39,8 @@ namespace YTDownloader
             }
             else
             {
-                var youTube = YouTube.Default; // starting point for YouTube actions
-                var video = youTube.GetVideo(link); // gets a Video object with info about the video
+                var youTube = YouTube.Default;
+                var video = youTube.GetVideo(link); 
                 File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
                 MessageBox.Show("Downloaded!");            }
 
