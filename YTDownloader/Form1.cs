@@ -2,6 +2,8 @@
 using System.IO;
 using System.Windows.Forms;
 using VideoLibrary;
+using MediaToolkit;
+using MediaToolkit.Model;
 
 namespace YTDownloader
 {
@@ -55,7 +57,31 @@ namespace YTDownloader
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming Soon...");
+            string path = label2.Text;
+            string link = textBox1.Text;
+            if (link == "Paste link here")
+            {
+                MessageBox.Show("Please input a youtube video URL");
+            }
+            else
+            {
+                var youtube = YouTube.Default;
+                var vid = youtube.GetVideo(link);
+                string mp4filepath = path + vid.FullName;
+                File.WriteAllBytes(path + vid.FullName, vid.GetBytes());
+
+                var inputFile = new MediaFile { Filename = path + vid.FullName };
+                var outputFile = new MediaFile { Filename = $"{path + vid.FullName}.mp3" };
+
+                using (var engine = new Engine())
+                {
+                    engine.GetMetadata(inputFile);
+                    engine.Convert(inputFile, outputFile);
+                    File.Delete(mp4filepath);
+                    MessageBox.Show("Downloaded!");
+                }
+            }
+
         }
     }
 }
