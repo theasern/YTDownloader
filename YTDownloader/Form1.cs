@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using VideoLibrary;
 using MediaToolkit;
 using MediaToolkit.Model;
+using System.Diagnostics;
 
 namespace YTDownloader
 {
@@ -47,7 +48,13 @@ namespace YTDownloader
                     var youTube = YouTube.Default;
                     var video = youTube.GetVideo(link);
                     File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
-                    MessageBox.Show("Downloaded!");
+
+                    if (checkBox1.Checked)
+                    {
+                        Process.Start(path);
+                        Environment.Exit(1);
+                    }
+                    else MessageBox.Show("Downloaded!");
                 }
                 else MessageBox.Show("Please connect to a network");
             }
@@ -78,10 +85,22 @@ namespace YTDownloader
                     engine.GetMetadata(inputFile);
                     engine.Convert(inputFile, outputFile);
                     File.Delete(mp4filepath);
-                    MessageBox.Show("Downloaded!");
+
+                    if (checkBox1.Checked)
+                    {
+                        Process.Start(path);
+                        Environment.Exit(1);
+                    }
+                    else MessageBox.Show("Downloaded!");
                 }
             }
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/theasern");
+        }
+
     }
 }
