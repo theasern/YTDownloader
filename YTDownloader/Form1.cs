@@ -30,7 +30,17 @@ namespace YTDownloader
                     path = folderDialog.SelectedPath;
                     label2.Text = path;
                 }
-                else MessageBox.Show("Path selection failed!");
+                else
+                {
+                    if (metrics.Checked)
+                    {
+                        var log = new LoggerConfiguration()
+                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
+                        .CreateLogger();
+                        log.Error("Path Selection Failed");
+                    }
+                        MessageBox.Show("Path selection failed!");
+                }
             }
         }
 
@@ -77,6 +87,13 @@ namespace YTDownloader
             string link = textBox1.Text;
             if (link == "Paste link here")
             {
+                if (metrics.Checked)
+                {
+                    var log = new LoggerConfiguration()
+                    .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
+                    .CreateLogger();
+                    log.Error("Not pasted youtube video URL");
+                }
                 MessageBox.Show("Please input a youtube video URL");
             }
             else
