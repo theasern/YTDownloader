@@ -6,4 +6,6 @@
 
 Fast MP4 & MP3 downloader for Youtube
 
-Lastest Download: https://github.com/theasern/YTDownloader/releases/download/v1.0/YTDownloader.exe
+![alt text](https://i.imgur.com/6Ed3QBU.png)
+
+Lastest Download: https://github.com/theasern/YTDownloader/releases/download/v2.1/YTDownloader.exe
