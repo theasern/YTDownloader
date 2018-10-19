@@ -5,6 +5,7 @@ using VideoLibrary;
 using MediaToolkit;
 using MediaToolkit.Model;
 using System.Diagnostics;
+using Serilog;
 
 namespace YTDownloader
 {
@@ -49,6 +50,14 @@ namespace YTDownloader
                     var video = youTube.GetVideo(link);
                     File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
 
+                    if (metrics.Checked)
+                    {
+                        var log = new LoggerConfiguration()
+                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
+                        .CreateLogger();
+                        log.Information("MP4Downl " + link);
+                    }
+
                     if (checkBox1.Checked)
                     {
                         Process.Start(path);
@@ -85,6 +94,14 @@ namespace YTDownloader
                     engine.GetMetadata(inputFile);
                     engine.Convert(inputFile, outputFile);
                     File.Delete(mp4filepath);
+
+                    if (metrics.Checked)
+                    {
+                        var log = new LoggerConfiguration()
+                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
+                        .CreateLogger();
+                        log.Information("MP3Downl " + link);
+                    }
 
                     if (checkBox1.Checked)
                     {

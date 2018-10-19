@@ -39,6 +39,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.metrics = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +127,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 416);
+            this.checkBox1.Location = new System.Drawing.Point(50, 413);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(149, 17);
             this.checkBox1.TabIndex = 8;
@@ -145,11 +146,24 @@
             this.linkLabel1.Text = "by theasern";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // metrics
+            // 
+            this.metrics.AutoSize = true;
+            this.metrics.Checked = true;
+            this.metrics.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.metrics.Location = new System.Drawing.Point(279, 413);
+            this.metrics.Name = "metrics";
+            this.metrics.Size = new System.Drawing.Size(88, 17);
+            this.metrics.TabIndex = 10;
+            this.metrics.Text = "Send Metrics";
+            this.metrics.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 445);
+            this.Controls.Add(this.metrics);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
@@ -181,6 +195,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox metrics;
     }
 }
 
