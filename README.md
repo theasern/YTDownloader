@@ -8,5 +8,5 @@ Fast MP4 & MP3 downloader from Youtube for Windows, forked in C#
 
 ![alt text](https://i.imgur.com/6Ed3QBU.png)
 
-Lastest Download: hhttps://github.com/theasern/YTDownloader/releases/download/v2.2/YTDownloader.exe
+Lastest Download: https://github.com/theasern/YTDownloader/releases/download/v2.2/YTDownloader.exe
 Windows SmartScreen Bypass: https://github.com/theasern/YTDownloader/releases/download/v2.2/YTDownloader.zip
