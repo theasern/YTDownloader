@@ -136,5 +136,9 @@ namespace YTDownloader
             Process.Start("https://github.com/theasern");
         }
 
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.SelectAll();
+        }
     }
 }

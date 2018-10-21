@@ -83,6 +83,7 @@
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Paste link here";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // button2
             // 
