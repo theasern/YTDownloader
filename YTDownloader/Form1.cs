@@ -140,5 +140,13 @@ namespace YTDownloader
         {
             textBox1.SelectAll();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var log = new LoggerConfiguration()
+            .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
+            .CreateLogger();
+            log.Information("Changed folder on download state");
+        }
     }
 }
