@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 
-Fast MP4 & MP3 downloader from Youtube for Windows, forked in C#
+Presenting the most simple, efficent downloader on the internet
 
 ![alt text](https://i.imgur.com/6Ed3QBU.png)
 
