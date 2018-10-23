@@ -71,7 +71,6 @@ namespace YTDownloader
                     if (checkBox1.Checked)
                     {
                         Process.Start(path);
-                        Environment.Exit(1);
                     }
                     else MessageBox.Show("Downloaded!");
                 }
@@ -101,7 +100,7 @@ namespace YTDownloader
                 var youtube = YouTube.Default;
                 var vid = youtube.GetVideo(link);
                 string mp4filepath = path + vid.FullName;
-                File.WriteAllBytes(path + vid.FullName, vid.GetBytes());
+                File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
 
                 var inputFile = new MediaFile { Filename = path + vid.FullName };
                 var outputFile = new MediaFile { Filename = $"{path + vid.FullName}.mp3" };
@@ -123,7 +122,6 @@ namespace YTDownloader
                     if (checkBox1.Checked)
                     {
                         Process.Start(path);
-                        Environment.Exit(1);
                     }
                     else MessageBox.Show("Downloaded!");
                 }
