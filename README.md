@@ -33,6 +33,8 @@ Presenting the most **simple**, **efficent** downloader on the internet. Just by
 ## Community
 - Discord:
 > https://discord.gg/QfWZtKf 
+- Github:
+> https://github.com/theasern/ytdownloader
 ## Downloads
 **Lastest Download**: https://github.com/theasern/YTDownloader/releases/download/v2.3/YTDownloader.exe
 
