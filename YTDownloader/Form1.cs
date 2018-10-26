@@ -99,7 +99,7 @@ namespace YTDownloader
             {
                 var youtube = YouTube.Default;
                 var vid = youtube.GetVideo(link);
-                string mp4filepath = path + vid.FullName;
+                string mp4filepath = path + @"\" + vid.FullName;
                 File.WriteAllBytes(path + @"\" + vid.FullName, vid.GetBytes());
 
                 var inputFile = new MediaFile { Filename = path + vid.FullName };
