@@ -5,13 +5,39 @@
 [![Discord](https://img.shields.io/badge/discord-QfWZtKf-%237289DA.svg)](https://discord.gg/QfWZtKf)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+## Description
+Presenting the most **simple**, **efficent** downloader on the internet. Just by the press of a button you can convert any youtube video with any length to the desired format you want, audio or video.
 
-Fast MP4 & MP3 downloader from Youtube for Windows, forked in C#
+## Features
+> - Download MP4 videos from YouTube
+
+> - Download MP3 videos from YouTube
+
+> - 100% Free of charge
+
+> - Simple, intuitive GUI
+
+> - Unlimited video/audio length
+
+> - Open folder when finished option
+
+> - Download location selector
+
+> - Includes metrics to send directly errors to developer
+
+> - Built and created in C#, an extremly efficient language
+## Screenshot
 
 ![alt text](https://i.imgur.com/6Ed3QBU.png)
 
-Also, join our discord here: https://discord.gg/QfWZtKf or in the badge at the top
+## Community
+- Discord:
+> https://discord.gg/QfWZtKf 
+- Github:
+> https://github.com/theasern/ytdownloader
+## Downloads
+**Lastest Download**: https://github.com/theasern/YTDownloader/releases/download/v2.3/YTDownloader.exe
 
-Lastest Download: https://github.com/theasern/YTDownloader/releases/download/v2.2/YTDownloader.exe
-
-Windows SmartScreen Bypass: https://github.com/theasern/YTDownloader/releases/download/v2.2/YTDownloader.zip
+Compressed Download: https://github.com/theasern/YTDownloader/releases/download/v2.3/YTDownloader.zip
+### License
+*This project is licensed under the BSD-3-Clause LICENSE, for more information about open-source licenses, click [here](https://opensource.org/faq), or if you want more information about the BSD-3-Clause, click [here](https://opensource.org/licenses/BSD-3-Clause)*
