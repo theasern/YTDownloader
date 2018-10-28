@@ -102,7 +102,7 @@ namespace YTDownloader
                 string mp4filepath = path + @"\" + vid.FullName;
                 File.WriteAllBytes(path + @"\" + vid.FullName, vid.GetBytes());
 
-                var inputFile = new MediaFile { Filename = path + vid.FullName };
+                var inputFile = new MediaFile { Filename = path + @"\" + vid.FullName };
                 var outputFile = new MediaFile { Filename = $"{path + vid.FullName}.mp3" };
 
                 using (var engine = new Engine())
