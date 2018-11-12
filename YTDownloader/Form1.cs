@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using VideoLibrary;
 using MediaToolkit;
 using MediaToolkit.Model;
 using System.Diagnostics;
-using Serilog;
+using VideoLibrary;
 
 namespace YTDownloader
 {
@@ -34,10 +33,7 @@ namespace YTDownloader
                 {
                     if (metrics.Checked)
                     {
-                        var log = new LoggerConfiguration()
-                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
-                        .CreateLogger();
-                        log.Error("Path Selection Failed");
+                        API.LogError("Path Selection Failed");
                     }
                         MessageBox.Show("Path selection failed!");
                 }
@@ -56,16 +52,13 @@ namespace YTDownloader
             {
                 if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
                 {
-                    var youTube = YouTube.Default;
-                    var video = youTube.GetVideo(link);
-                    File.WriteAllBytes(path + @"\" + video.FullName, video.GetBytes());
+                    var youtube = YouTube.Default;
+                    var vid = youtube.GetVideo(link);
+                    File.WriteAllBytes(path + vid.FullName, vid.GetBytes());
 
                     if (metrics.Checked)
                     {
-                        var log = new LoggerConfiguration()
-                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
-                        .CreateLogger();
-                        log.Information("MP4Downl " + link);
+                        API.LogInfo("MP4Downl " + link);
                     }
 
                     if (checkBox1.Checked)
@@ -88,10 +81,7 @@ namespace YTDownloader
             {
                 if (metrics.Checked)
                 {
-                    var log = new LoggerConfiguration()
-                    .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
-                    .CreateLogger();
-                    log.Error("Not pasted youtube video URL");
+                    API.LogError("Not pasted youtube video URL");
                 }
                 MessageBox.Show("Please input a youtube video URL");
             }
@@ -99,8 +89,8 @@ namespace YTDownloader
             {
                 var youtube = YouTube.Default;
                 var vid = youtube.GetVideo(link);
-                string mp4filepath = path + @"\" + "Temp.mp4";
-                File.WriteAllBytes(path + @"\" + "Temp.mp4", vid.GetBytes());
+                 string mp4filepath = path + @"\" + "Temp.mp4";
+                File.WriteAllBytes(mp4filepath, vid.GetBytes());
 
                 var inputFile = new MediaFile { Filename = path + @"\" + "Temp.mp4" };
                 var outputFile = new MediaFile { Filename = $"{path + @"\" + vid.Title}.mp3" };
@@ -113,10 +103,7 @@ namespace YTDownloader
 
                     if (metrics.Checked)
                     {
-                        var log = new LoggerConfiguration()
-                        .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
-                        .CreateLogger();
-                        log.Information("MP3Downl " + link);
+                        API.LogInfo("MP3Downl " + link);
                     }
 
                     if (checkBox1.Checked)
@@ -141,10 +128,20 @@ namespace YTDownloader
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            var log = new LoggerConfiguration()
-            .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
-            .CreateLogger();
-            log.Information("Changed folder on download state");
+            if (metrics.Checked)
+            {
+                API.LogInfo("Changed folder on download state");
+            }
+
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var text = textBox1.Text;
+            string vidname = API.GetTitle(text);
+            label5.Text = vidname;
+        }
+
+
     }
 }
