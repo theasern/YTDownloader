@@ -36,8 +36,8 @@ Presenting the most **simple**, **efficent** downloader on the internet. Just by
 - Github:
 > https://github.com/theasern/ytdownloader
 ## Downloads
-**Lastest Download**: https://github.com/theasern/YTDownloader/releases/download/v2.3/YTDownloader.exe
+**Lastest Download**: https://github.com/theasern/YTDownloader/releases/download/v2.4/YTDownloader.exe
 
-Compressed Download: https://github.com/theasern/YTDownloader/releases/download/v2.3/YTDownloader.zip
+Compressed Download: https://github.com/theasern/YTDownloader/releases/download/v2.4/YTDownloader.zip
 ### License
 *This project is licensed under the BSD-3-Clause LICENSE, for more information about open-source licenses, click [here](https://opensource.org/faq), or if you want more information about the BSD-3-Clause, click [here](https://opensource.org/licenses/BSD-3-Clause)*
