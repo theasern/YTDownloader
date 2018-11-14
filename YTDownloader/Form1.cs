@@ -140,6 +140,7 @@ namespace YTDownloader
             var text = textBox1.Text;
             string vidname = API.GetTitle(text);
             label5.Text = vidname;
+            API.LogInfo(vidname);
         }
 
 
