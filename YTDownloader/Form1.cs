@@ -54,7 +54,7 @@ namespace YTDownloader
                 {
                     var youtube = YouTube.Default;
                     var vid = youtube.GetVideo(link);
-                    File.WriteAllBytes(path + vid.FullName, vid.GetBytes());
+                    File.WriteAllBytes(path + @"\" + vid.FullName, vid.GetBytes());
 
                     if (metrics.Checked)
                     {
@@ -89,7 +89,7 @@ namespace YTDownloader
             {
                 var youtube = YouTube.Default;
                 var vid = youtube.GetVideo(link);
-                 string mp4filepath = path + @"\" + "Temp.mp4";
+                string mp4filepath = path + @"\" + "Temp.mp4";
                 File.WriteAllBytes(mp4filepath, vid.GetBytes());
 
                 var inputFile = new MediaFile { Filename = path + @"\" + "Temp.mp4" };
