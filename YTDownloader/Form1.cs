@@ -128,9 +128,16 @@ namespace YTDownloader
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            
             if (metrics.Checked)
             {
-                API.LogInfo("Changed folder on download state");
+                if (folderonce.Checked) { }
+                else
+                {
+                    API.LogInfo("Changed folder on download state");
+                    folderonce.Checked = true;
+                }
+
             }
 
         }
@@ -143,7 +150,6 @@ namespace YTDownloader
             if (metrics.Checked) API.LogInfo("Pasted " + vidname);
 
         }
-
 
     }
 }

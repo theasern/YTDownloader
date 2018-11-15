@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace YTDownloader
@@ -9,14 +6,20 @@ namespace YTDownloader
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Start point for the application
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
             Application.Run(new Form1());
+        }
+
+        static void OnProcessExit(object sender, EventArgs e)
+        {
+
         }
     }
 }

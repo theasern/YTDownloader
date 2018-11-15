@@ -43,6 +43,11 @@ namespace YTDownloader
             log.Error(error);
         }
 
+        public static void Exit()
+        {
+            Environment.Exit(0);
+        }
+
 
     }
 }

@@ -42,6 +42,7 @@
             this.metrics = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.folderonce = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,11 +182,23 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Please input a video in textbox";
             // 
+            // folderonce
+            // 
+            this.folderonce.AutoSize = true;
+            this.folderonce.Location = new System.Drawing.Point(344, 12);
+            this.folderonce.Name = "folderonce";
+            this.folderonce.Size = new System.Drawing.Size(76, 17);
+            this.folderonce.TabIndex = 13;
+            this.folderonce.Text = "folderonce";
+            this.folderonce.UseVisualStyleBackColor = true;
+            this.folderonce.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 463);
+            this.Controls.Add(this.folderonce);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.metrics);
@@ -223,6 +236,7 @@
         private System.Windows.Forms.CheckBox metrics;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox folderonce;
     }
 }
 
