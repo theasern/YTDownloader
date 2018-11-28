@@ -1,4 +1,5 @@
 ﻿using Mono.Web;
+using MySql.Data.MySqlClient;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace YTDownloader
 {
@@ -48,6 +50,35 @@ namespace YTDownloader
             Environment.Exit(0);
         }
 
+
+        internal bool loginAction(string user, string pass)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection("server = localhost;username=read;password=read;database=userdata");
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "SELECT* FROM `login` WHERE `user` LIKE '" + user + "' AND BINARY `pass` = '" + pass + "'";
+                cmd.Connection = conn;
+                MySqlDataReader login = cmd.ExecuteReader();
+                if (login.Read())
+                {
+                    conn.Close();
+                    return true;
+
+                }
+                else
+                {
+                    conn.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
 
     }
 }
