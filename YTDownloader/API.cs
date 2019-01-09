@@ -42,7 +42,7 @@ namespace YTDownloader
             var log = new LoggerConfiguration()
         .WriteTo.DatadogLogs("bf0c27b81711387d611e6d3af6ed2481")
             .CreateLogger();
-            log.Error(error);
+            log.Information(error);
         }
 
         public static void Exit()
@@ -55,7 +55,7 @@ namespace YTDownloader
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server = localhost;username=read;password=read;database=userdata");
+                MySqlConnection conn = new MySqlConnection("server = sql200.epizy.com;username=epiz_21264012;password=darUtAm;database=epiz_21264012_ytmaster");
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = "SELECT* FROM `login` WHERE `user` LIKE '" + user + "' AND BINARY `pass` = '" + pass + "'";

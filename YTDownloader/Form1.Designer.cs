@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(89, 16);
+            this.label1.Location = new System.Drawing.Point(21, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 39);
             this.label1.TabIndex = 0;
@@ -144,7 +144,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.linkLabel1.Location = new System.Drawing.Point(165, 58);
+            this.linkLabel1.Location = new System.Drawing.Point(27, 64);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(104, 22);
             this.linkLabel1.TabIndex = 9;
@@ -185,7 +185,7 @@
             // folderonce
             // 
             this.folderonce.AutoSize = true;
-            this.folderonce.Location = new System.Drawing.Point(344, 12);
+            this.folderonce.Location = new System.Drawing.Point(197, 428);
             this.folderonce.Name = "folderonce";
             this.folderonce.Size = new System.Drawing.Size(76, 17);
             this.folderonce.TabIndex = 13;
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 463);
+            this.ClientSize = new System.Drawing.Size(436, 468);
             this.Controls.Add(this.folderonce);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
